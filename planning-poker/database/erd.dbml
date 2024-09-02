@@ -1,0 +1,51 @@
+Table users {
+  user_id INT [pk, increment]
+  upn VARCHAR(60) [not null]
+}
+
+Table rooms {
+  room_id INT [pk, increment]
+  room_name VARCHAR(50) [not null]
+  owner_id INT [not null]
+  closed BOOLEAN [not null, default: FALSE]
+}
+
+Table users_in_rooms {
+  user_in_room_id INT [pk, increment]
+  user_id INT [not null]
+  room_id INT [not null]
+
+  Indexes {
+    (user_id, room_id) [unique]
+  }
+}
+
+Table tickets {
+  ticket_id INT [pk, increment]
+  ticket_name VARCHAR(250) [not null]
+  room_id INT [not null]
+}
+
+Table votes {
+  vote_id INT [pk, increment]
+  user_in_room_id INT [not null]
+  vote_type_id INT [not null]
+  ticket_id INT [not null]
+}
+
+Table vote_types {
+  vote_type_id INT [pk, increment]
+  vote VARCHAR(25) [not null]
+}
+
+Ref:users.user_id < users_in_rooms.user_id
+
+Ref:rooms.room_id < users_in_rooms.room_id
+
+Ref:rooms.room_id < tickets.room_id
+
+Ref:users_in_rooms.user_in_room_id < votes.user_in_room_id
+
+Ref:tickets.ticket_id < votes.ticket_id
+
+Ref:vote_types.vote_type_id < votes.vote_type_id

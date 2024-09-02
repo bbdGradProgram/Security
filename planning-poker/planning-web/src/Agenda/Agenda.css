@@ -1,0 +1,47 @@
+.agenda {
+    flex: 1 1 0;
+    gap: 1em;
+    padding: 1em;
+    border-left: solid rgba(0, 0, 0, 15%) 1px;
+    box-shadow: -1px 2px 2px 0 rgba(0, 0, 0, 5%);
+
+    &>ol {
+
+        &>section {
+            gap: 1em;
+            padding: .5em;
+            justify-content: space-between;
+
+            &.current {
+                font-weight: bolder;
+            }
+
+            &>li {
+                margin-left: 1em;
+                border-radius: .5em;
+            }
+
+            &>p {
+                min-width: 1em;
+            }
+        }
+
+
+        &>form {
+            gap: 1em;
+
+            &>textarea {
+                resize: none;
+            }
+
+            &>button {
+                padding: 0 .25em;
+            }
+        }
+    }
+}
+
+.dark .agenda {
+    border-left: solid rgba(255, 255, 255, 15%) 1px;
+    box-shadow: -1px 2px 2px 0 rgba(255, 255, 255, 5%);
+}

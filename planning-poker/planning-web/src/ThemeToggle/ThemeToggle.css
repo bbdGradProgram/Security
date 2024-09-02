@@ -1,0 +1,32 @@
+.theme-toggle {
+    --toggle-size: 2em;
+    overflow: hidden;
+    height: var(--toggle-size);
+    aspect-ratio: 1;
+    padding: calc(var(--toggle-size) / 8);
+
+    &>* {
+        gap: calc(var(--toggle-size) / 2);
+        height: calc(var(--toggle-size) * 2 );
+        transition: rotate var(--transition-duration) linear;
+        aspect-ratio: 1;
+        border-radius: 50%;
+
+        &>svg {
+            flex-basis: var(--toggle-size);
+            transition: fill var(--transition-duration) linear;
+            fill: black;
+            height: calc(var(--toggle-size) / 2);
+        }
+    }
+}
+
+.dark .theme-toggle {
+    &>* {
+        rotate: .5turn;
+
+        &>svg {
+            fill: white;
+        }
+    }
+}

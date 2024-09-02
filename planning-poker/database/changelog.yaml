@@ -1,0 +1,7 @@
+databaseChangeLog:
+   - include:
+      file: ./database/tableCreates.sql
+   - include:
+      file: ./database/tableAlters.sql
+   - include:
+      file: ./database/mockData/dummyData.sql

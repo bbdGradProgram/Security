@@ -1,0 +1,53 @@
+.room-choose {
+    flex: 1 1 0;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+
+    &>section {
+        flex-wrap: wrap;
+        gap: 2em;
+        justify-content: center;
+    }
+
+    & form {
+        flex: 1 1 20rem;
+        max-width: 30rem;
+        background-color: rgba(0, 0, 0, 5%);
+        align-items: center;
+        padding: 1em;
+        border-radius: 1em;
+        gap: 1em;
+
+        &>p {
+            padding: 1em;
+        }
+
+        &>article {
+            gap: .5em;
+        }
+
+        &>label {
+            flex-wrap: wrap;
+            gap: 1em;
+
+            &>input {
+                padding: .25em .5em;
+                max-width: 10em;
+            }
+        }
+
+        &>button {
+            margin-top: auto;
+            padding: .5em 1em;
+            align-self: flex-start;
+        }
+    }
+}
+
+.dark .room-choose {
+    & form {
+
+        background-color: rgba(255, 255, 255, 5%);
+    }
+}
